@@ -164,7 +164,7 @@ export function PostDetail({ post }: PostDetailProps) {
             href="/"
             className="inline-block border-2 border-bold-green px-6 py-2 text-xs uppercase tracking-widest font-bold hover:bg-bold-green hover:text-background transition-colors"
           >
-            Back to Home
+          Kembali ke Beranda
           </Link>
         </div>
       </div>

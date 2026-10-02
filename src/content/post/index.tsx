@@ -6,7 +6,7 @@ export async function Post() {
   const posts = await getPosts();
 
   return (
-    <section className="w-full flex flex-col bg-background mx-auto justify-center items-center space-y-8 pb-16">
+    <section className="w-full flex flex-col bg-background mx-auto justify-center items-center space-y-8 md:pb-16">
       <div className="font-stardos text-5xl md:text-7xl lg:text-8xl leading-none text-center tracking-widest text-light-orange">
         PUBLIKASI
       </div>

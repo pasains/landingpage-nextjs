@@ -32,8 +32,8 @@ const AboutUs = () => {
             Music Community (SMC) UGM.
           </p>
         </div>
-        <div className="md:col-span-1 mt-0 md:mt-10 ">
-          <div className="border border-gray-200 p-2 bg-background">
+        <div className="md:col-span-1 mt-0 md:mt-2">
+          <div className="border border-gray-200 p-2 bg-light-orange">
             <Image
               src={data.logo}
               alt="PASAINS Logo"
@@ -44,8 +44,8 @@ const AboutUs = () => {
             Lambang resmi PASAINS
           </p>
 
-          <div className="border border-gray-200 p-1 mt-4 bg-background">
-            <h3 className="text-md font-bold text-center border-b border-gray-300 pb-1 mb-2 font-stardos tracking-wider">
+          <div className="border border-bold-green p-1 mt-4 bg-background">
+            <h3 className="text-md font-bold text-center border-b border-bold-green pb-1 mb-2 font-stardos tracking-wider">
               Fakta Singkat
             </h3>
             <div className="space-y-1 text-xs">
@@ -56,6 +56,10 @@ const AboutUs = () => {
               <div className="flex justify-between">
                 <span className="font-semibold">Fakultas:</span>
                 <span>FMIPA UGM</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="font-semibold">Provinsi:</span>
+                <span>Daerah Istimewa Yogyakarta</span>
               </div>
             </div>
           </div>

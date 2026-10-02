@@ -8,7 +8,7 @@ import ContactUs from "../contactus";
 
 export function HomeContent() {
   return (
-    <div className="bg-background space-y-16">
+    <div className="bg-background space-y-10 md:space-y-16">
       {/* CAROUSEL */}
       <Carousel>
         {data.carousel.map((data, index) => (

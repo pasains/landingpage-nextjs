@@ -27,6 +27,25 @@
   background-image: url("/image/rc.jpg");
 }
 
+/*
+ * iOS fix: `background-attachment: fixed` is unreliable in WebKit on touch
+ * devices (iOS Safari and the Google app's WKWebView). It paints the image
+ * against the viewport without honouring `background-size: cover`, so the
+ * background ends up un-zoomed / mis-offset.
+ *
+ * `-webkit-touch-callout` is WebKit-only and `pointer: coarse` restricts it to
+ * phones/tablets, so desktop and Android are left on the real `fixed`.
+ * Falling back to `scroll` is safe here because every `ios-bg-fix` element is
+ * exactly one viewport tall, where scroll and fixed are visually identical.
+ */
+@supports (-webkit-touch-callout: none) {
+  @media (pointer: coarse) {
+    .ios-bg-fix {
+      background-attachment: scroll;
+    }
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

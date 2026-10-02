@@ -1,5 +1,5 @@
 import { Stardos_Stencil, Gantari } from "next/font/google";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 import ScrollToTopButton from "@/components/scrollButton";
 import Heading from "@/src/container/heading";
@@ -13,7 +13,6 @@ interface LayoutProps {
 }
 
 export const metadata: Metadata = {
-  colorScheme: "light",
   title: "PASAINS - Never Ending Brotherhood",
   description:
     "PASAINS adalah organisasi pecinta alam yang bergerak di bidang pendakian gunung, caving, climbing, dan lingkungan hidup.",
@@ -25,6 +24,10 @@ export const metadata: Metadata = {
     "lingkungan hidup",
     "UGM",
   ],
+};
+
+export const viewport: Viewport = {
+  colorScheme: "light",
 };
 
 const stardos = Stardos_Stencil({
