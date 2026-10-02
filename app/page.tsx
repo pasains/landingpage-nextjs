@@ -1,13 +1,11 @@
-"use client";
-
 import { HomeContent } from "@/src/content/home";
-import { Post } from "@/src/content/post";
+
+export const revalidate = 1800;
 
 export default function Page() {
-    return (
-        <div className="font-nunito scroll-smooth focus:scroll-auto">
-            <HomeContent />
-            <Post />
-        </div>
-    );
+  return (
+    <div className="scroll-smooth focus:scroll-auto">
+      <HomeContent />
+    </div>
+  );
 }

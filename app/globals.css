@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #f7f7f5;
   --foreground: #171717;
-  --light-orange: #f97316;
+  --light-orange: #da7422;
   --bold-orange: #ea580c;
+  --bold-green: #30362f;
 }
 .background-mount1 {
   background-image: url("/image/gh.jpg");
@@ -14,15 +15,11 @@
   background-image: url("/image/ghghgh.jpg");
 }
 
-.background-caving {
-  background-image: url("/image/cv.jpg");
-}
-
-.background-caving2 {
+.background-caving1 {
   background-image: url("/image/cvcvcv.jpg");
 }
 
-.background-caving4 {
+.background-caving2 {
   background-image: url("/image/cvcvcvcv.jpg");
 }
 
@@ -30,21 +27,15 @@
   background-image: url("/image/rc.jpg");
 }
 
-.background-nature {
-  background-image: url("/image/lh.jpg");
-}
-
-.background-onepiece {
-  background-image: url("/image/onepiece.jpg");
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-bebas: var(--font-bebas);
-  --font-playfair: var(--font-playfair);
+  --color-light-orange: var(--light-orange);
+  --color-bold-orange: var(--bold-orange);
+  --color-bold-green: var(--bold-green);
+  --font-sans: var(--font-gantari-family);
+  --font-gantari: var(--font-gantari-family);
+  --font-stardos: var(--font-stardos-family);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -57,25 +48,97 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-nunito, Arial, Helvetica, sans-serif);
+  font-family: var(--font-gantari-family);
 }
 
-.text-light-orange {
-  color: var(--light-orange);
+/* Org Chart Tree */
+.org-tree,
+.org-tree ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
-.text-bold-orange {
-  color: var(--bold-orange);
+.org-tree {
+  flex-direction: column;
+  align-items: center;
 }
 
-.bg-light-orange {
-  background-color: var(--light-orange);
+.org-tree ul {
+  flex-direction: row;
+  gap: 0;
 }
 
-.bg-bold-orange {
-  background-color: var(--bold-orange);
+.org-tree li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 0;
 }
 
-.border-light-orange {
-  border-color: var(--light-orange);
+/* Vertical line from parent to children */
+.org-tree li > ul {
+  position: relative;
+  padding-top: 16px;
+}
+
+.org-tree li > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 16px;
+  background: #d1d5db;
+}
+
+/* Horizontal line connecting siblings */
+.org-tree li > ul > li {
+  position: relative;
+}
+
+.org-tree li > ul > li::before,
+.org-tree li > ul > li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 1px;
+  background: #d1d5db;
+}
+
+.org-tree li > ul > li::before {
+  right: 50%;
+  width: 50%;
+}
+
+.org-tree li > ul > li::after {
+  left: 50%;
+  width: 50%;
+}
+
+/* Remove line on first and last child */
+.org-tree li > ul > li:first-child::before {
+  display: none;
+}
+
+.org-tree li > ul > li:last-child::after {
+  display: none;
+}
+
+/* Vertical line from horizontal to node */
+.org-tree li > ul > li > *:first-child {
+  position: relative;
+}
+
+.org-tree li > ul > li > *:first-child::before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  width: 1px;
+  height: 16px;
+  background: #d1d5db;
 }

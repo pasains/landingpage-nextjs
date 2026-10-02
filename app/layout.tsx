@@ -1,7 +1,7 @@
-import { Nunito, Bebas_Neue, Playfair_Display } from "next/font/google";
+import { Stardos_Stencil, Gantari } from "next/font/google";
 import type { Metadata } from "next";
 
-import ScrollToTopButton from "@/src/components/scrollbutton";
+import ScrollToTopButton from "@/components/scrollButton";
 import Heading from "@/src/container/heading";
 import { ReactNode } from "react";
 
@@ -13,12 +13,12 @@ interface LayoutProps {
 }
 
 export const metadata: Metadata = {
-  title: "PASAINS - Pecinta Alam Sains",
+  title: "PASAINS - Never Ending Brotherhood",
   description:
     "PASAINS adalah organisasi pecinta alam yang bergerak di bidang pendakian gunung, caving, climbing, dan lingkungan hidup.",
   keywords: [
     "pecinta alam",
-    "pendakian",
+    "hiking",
     "caving",
     "climbing",
     "lingkungan hidup",
@@ -26,28 +26,24 @@ export const metadata: Metadata = {
   ],
 };
 
-const nunito = Nunito({
-  subsets: ["latin"],
+const stardos = Stardos_Stencil({
   weight: ["400", "700"],
-  variable: "--font-nunito",
+  variable: "--font-stardos-family",
 });
 
-const bebas = Bebas_Neue({
+const gantari = Gantari({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-bebas",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
+  weight: ["400"],
+  variable: "--font-gantari-family",
 });
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
-      <body className={`${nunito.className} ${nunito.variable} ${bebas.variable} ${playfair.variable}`}>
-        <header>
+      <body
+        className={`${gantari.className} ${gantari.variable} ${stardos.className} ${stardos.variable}`}
+      >
+        <header className="place-items-center">
           <Heading />
         </header>
 

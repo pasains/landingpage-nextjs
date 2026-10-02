@@ -1,6 +1,6 @@
 "use client";
 
-import data from "@/src/data/image";
+import data from "@/data";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -11,11 +11,8 @@ export default function Heading() {
   const [isScroll, setIsScroll] = useState(false);
 
   const listNavbar = [
-    { id: 1, title: "Home", link: "/" },
-    { id: 2, title: "About", link: "/about" },
-    { id: 3, title: "Organization", link: "/organization" },
-    { id: 4, title: "Post", link: "/post" },
-    { id: 5, title: "Contact Us", link: "/contactus" },
+    { id: 1, title: "Beranda", link: "/" },
+    { id: 2, title: "Publikasi", link: "/publication" },
   ];
 
   useEffect(() => {
@@ -37,7 +34,7 @@ export default function Heading() {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-colors duration-300
+      className={`fixed md:rounded-3xl w-full md:w-1/2 z-50 md:mt-3 mx-auto transition-colors duration-300
       ${isScroll || isOpen ? "bg-white shadow-md" : "bg-white/50"}`}
     >
       <div className="mx-auto p-2 md:p-4">
@@ -54,7 +51,7 @@ export default function Heading() {
           </Link>
 
           {/* Desktop menu */}
-          <nav className="hidden md:flex gap-6 font-semibold text-black">
+          <nav className="hidden md:flex gap-6 font-semibold text-black ">
             {listNavbar.map((item) => (
               <Link
                 key={item.id}

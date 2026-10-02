@@ -1,0 +1,20 @@
+export type PostProps = {
+  id: string;
+  slug: string;
+  title: string;
+  location: string;
+  author: string;
+  picture1: string;
+  picture2: string;
+  picture3: string;
+  picture4: string;
+  picture5: string;
+  picture6: string;
+  text1: string;
+  text2: string;
+  text3: string;
+  text4: string;
+  caption: string;
+  quote?: string;
+  name?: string;
+};
