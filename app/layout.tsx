@@ -13,6 +13,7 @@ interface LayoutProps {
 }
 
 export const metadata: Metadata = {
+  colorScheme: "light",
   title: "PASAINS - Never Ending Brotherhood",
   description:
     "PASAINS adalah organisasi pecinta alam yang bergerak di bidang pendakian gunung, caving, climbing, dan lingkungan hidup.",
